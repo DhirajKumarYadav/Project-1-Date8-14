@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>@yield('page_title')</title>
+    <title>Electronic Store</title>
     <link href="{{asset('admin_assets/css/font-face.css')}}" rel="stylesheet" media="all">
     <link href="{{asset('admin_assets/vendor/font-awesome-4.7/css/font-awesome.min.css')}}" rel="stylesheet" media="all">
     <link href="{{asset('admin_assets/vendor/font-awesome-5/css/fontawesome-all.min.css')}}" rel="stylesheet" media="all">
@@ -21,8 +21,8 @@
             <div class="header-mobile__bar">
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
-                        <a class="logo" href="{{url('admin/dashboard')}}">
-                            <img src="{{asset('admin_assets/images/icon/logo.png')}}" alt="CoolAdmin" width="100px" />
+                        <a class="logo" href="#">
+                            <img src="{{asset('admin_assets/images/icon/logo.pn')}}" alt="CoolAdmin" width="100px" />
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
@@ -68,9 +68,14 @@
         <!-- MENU SIDEBAR-->
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
-                <a href="{{url('admin/dashboard')}}">
+            <div class="login-logo"><br>
+                            <h2>
+                        Admin Store                                     
+                        </h2>
+                        </div>
+                <!-- <a href="{{url('admin/dashboard')}}">
                     <img src="{{asset('admin_assets/images/icon/logo.png')}}" width="100px" />
-                </a>
+                </a> -->
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
                 <nav class="navbar-sidebar">
@@ -101,7 +106,7 @@
                         </li>
 
                         <li class="@yield('product_select')">
-                            <a href="{{url('admin/product')}}">
+                            <a href="{{url('admin/addproduct')}}">
                             <i class="fa fa-product-hunt"></i>Product</a>
                         </li>
                     </ul>

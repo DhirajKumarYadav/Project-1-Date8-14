@@ -6,17 +6,12 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+//======================================================================================================
     public function addadmin()
     {
         return view('admin.newadmin');
     }
-
+//======================================================================================================
     /**
      * Display the specified resource.
      *
