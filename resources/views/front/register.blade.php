@@ -21,13 +21,16 @@
                     <div class="login-content">
                         <div class="login-logo">
                             <h2>
-                                Login Form
+                                Registration Form
                             </h2>
                         </div>
                         <div class="login-form">
                             <form action="userlogin" method="post">
-
                                 @csrf
+                                <div class="form-group">
+                                    <label>Name</label>
+                                    <input class="au-input au-input--full" type="text" name="name" placeholder="Name" required>
+                                </div>
                                 <div class="form-group">
                                     <label>Email Address</label>
                                     <input class="au-input au-input--full" type="email" name="email" placeholder="Email" required>
@@ -37,9 +40,7 @@
                                     <input class="au-input au-input--full" type="password" name="password" placeholder="Password" required>
                                 </div>
                                 <br>
-                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">sign in</button><br>
-                                
-                                <a class="small" href="{{url('register')}}">Register</a>
+                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">Register</button><br>
                                 @if(session()->has('error'))
                                 <div class="sufee-alert alert with-close alert-danger alert-dismissible fade show">
                                     {{session('error')}}  
