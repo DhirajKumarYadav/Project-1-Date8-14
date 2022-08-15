@@ -24,6 +24,7 @@ Route::get('/', function () {
 Route::get('admin',[UserController::class,'adminLayout']);
 Route::get('login',[UserController::class,'login']);
 Route::get('register',[UserController::class,'register']);
+Route::post('check_login',[UserController::class,'checkLogin']);
 
 Route::get('addadmin',[AdminController::class,'addadmin']);
 

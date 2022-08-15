@@ -25,7 +25,7 @@
                             </h2>
                         </div>
                         <div class="login-form">
-                            <form action="userlogin" method="post">
+                            <form action="check_login" method="POST">
 
                                 @csrf
                                 <div class="form-group">
@@ -37,7 +37,7 @@
                                     <input class="au-input au-input--full" type="password" name="password" placeholder="Password" required>
                                 </div>
                                 <br>
-                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">sign in</button><br>
+                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">Login</button><br>
                                 
                                 <a class="small" href="{{url('register')}}">Register</a>
                                 @if(session()->has('error'))

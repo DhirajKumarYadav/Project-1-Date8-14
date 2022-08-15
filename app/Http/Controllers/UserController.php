@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Login;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -24,9 +25,19 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function adminLayout()
+    public function checkLogin(Request $req)
     {
-        return view('admin.layout');
+        // return $req->input();
+        $user= Login::where(['email'=>$req->email])->first();
+        if(!$user || !Hash::check($req->password,$user->password))
+        {
+            return "UserName or Password incorrect";
+        }
+        else
+        {
+            $req->session()->put('user',$user);
+          return redirect('/');
+        }
     }
 
     /**
