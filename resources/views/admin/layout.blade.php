@@ -132,7 +132,7 @@
                                         <div class="nav-item dropdown">
                         <a href="#" class="nav-link" data-toggle="dropdown">Admin<i class="fa fa-angle-down float-right mt-"></i></a>
                             <div class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0">
-                                <a href="addadmin" class="dropdown-item">New Admin</a>
+                                <a href="addadmin" class="dropdown-item">Add Admin</a>
                                 <a href="apple_laptop" class="dropdown-item">Logout</a>
 
                             </div>

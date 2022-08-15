@@ -145,7 +145,7 @@
                             <a href="#" class="nav-link" data-toggle="dropdown">User<i class="fa fa-angle-down float-right mt-1"></i></a>
                             <div class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0">
                                 <!-- <a href="/" class="dropdown-item">Login</a> -->
-                                <a href="/registration" class="dropdown-item">Register</a>
+                                <a href="register" class="dropdown-item">Register</a>
                                 <a href="login" class="dropdown-item">Login</a>
                         </div>
                     </div>

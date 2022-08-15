@@ -12,9 +12,21 @@ class ProductController extends Controller
 return view('admin.add_product');
     }
 //========================================================================================
-public function newProduct(Request $req)
+public function storeProduct(Request $req)
 {
-
+//     echo "<pre>";
+// print_r($req->all());
+$data = new Product;
+$data->name=$req->input('name');
+$data->mrp=$req->input('mrp');
+$data->price=$req->input('price');
+$data->category=$req->input('category');
+$data->description=$req->input('description');
+$data->image=$req->input('image');
+ $data->save();
+return redirect('admin');
 }
+//========================================================================================
+
 
 }

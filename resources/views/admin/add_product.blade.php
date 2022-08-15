@@ -7,7 +7,7 @@
 <div class="row m-t-30">
    <div class="col-md-12">
         
-        <form action="addproduct" method="post" enctype="multipart/form-data">
+        <form action="addproduct" method="post">
         @csrf
         <div class="row">
             <div class="col-lg-12">
@@ -19,11 +19,11 @@
                         </div>
                         <div class="form-group">
                               <label for="mrp" class="control-label mb-1"> MRP</label>
-                              <input id="mrp" name="mrp[]" type="text" class="form-control" aria-required="true" aria-invalid="false" value="" required>
+                              <input id="mrp" name="mrp" type="text" class="form-control" aria-required="true" aria-invalid="false" value="" required>
                         </div>
                         <div class="form-group">
                               <label for="price" class="control-label mb-1"> Price</label>
-                              <input id="price" name="price[]" type="text" class="form-control" aria-required="true" aria-invalid="false" value="" required>
+                              <input id="price" name="price" type="text" class="form-control" aria-required="true" aria-invalid="false" value="" required>
                         </div>
                         <!-- <div class="form-group">
                               <label for="size_id" class="control-label mb-1"> Size</label>
@@ -47,7 +47,7 @@
                         </div>
                         <div class="form-group">
                                 <label for="desc" class="control-label mb-1"> Description</label>
-                                <textarea id="desc" name="desc" type="text" class="form-control" aria-required="true" aria-invalid="false" required></textarea>
+                                <textarea id="desc" name="description" type="text" class="form-control" aria-required="true" aria-invalid="false" required></textarea>
                         </div>
                         <div class="form-group">
                                 <label for="image" class="control-label mb-1"> Image</label>

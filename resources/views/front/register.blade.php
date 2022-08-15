@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Login</title>
+    <title>Registration</title>
     <link href="{{asset('admin_assets/css/font-face.css')}}" rel="stylesheet" media="all">
     <link href="{{asset('admin_assets/vendor/font-awesome-4.7/css/font-awesome.min.css')}}" rel="stylesheet" media="all">
     <link href="{{asset('admin_assets/vendor/font-awesome-5/css/fontawesome-all.min.css')}}" rel="stylesheet" media="all">
@@ -25,7 +25,7 @@
                             </h2>
                         </div>
                         <div class="login-form">
-                            <form action="userlogin" method="post">
+                            <form action="register" method="post">
                                 @csrf
                                 <div class="form-group">
                                     <label>Name</label>

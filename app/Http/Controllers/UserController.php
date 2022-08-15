@@ -19,12 +19,6 @@ class UserController extends Controller
         return view('front.register');
     }
 //==================================================================================================
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function checkLogin(Request $req)
     {
         // return $req->input();
@@ -39,6 +33,7 @@ class UserController extends Controller
           return redirect('/');
         }
     }
+//==================================================================================================
 
     /**
      * Display the specified resource.
@@ -46,9 +41,14 @@ class UserController extends Controller
      * @param  \App\Models\Login  $login
      * @return \Illuminate\Http\Response
      */
-    public function show(Login $login)
+    public function registeration(Request $req)
     {
-        //
+        $data =new Login;
+        $data->name=$req->name;
+        $data->email=$req->email;
+        $data->password=Hash::make($req->password);
+        $data->save();
+        return redirect('/');
     }
 
     /**

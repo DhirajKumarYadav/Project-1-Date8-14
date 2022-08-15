@@ -25,7 +25,7 @@
                         </h2>
                         </div>
                         <div class="login-form">
-                            <form action="userlogin" method="post">
+                            <form action="addadmin" method="post">
                                 @csrf
                                 <div class="form-group">
                                     <label>Name</label>
@@ -33,7 +33,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Email Address</label>
-                                    <input class="au-input au-input--full" type="email" name="email" placeholder="Email" required>
+                                    <input class="au-input au-input--full" type="text" name="email" placeholder="Email" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Password</label>

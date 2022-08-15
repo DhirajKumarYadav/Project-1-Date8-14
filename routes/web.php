@@ -20,16 +20,18 @@ use App\Http\Controllers\ProductController;
 Route::get('/', function () {
     return view('front.home');
 });
-
-Route::get('admin',[UserController::class,'adminLayout']);
 Route::get('login',[UserController::class,'login']);
+Route::post('login',[UserController::class,'checkLogin']);
 Route::get('register',[UserController::class,'register']);
-Route::post('check_login',[UserController::class,'checkLogin']);
+Route::post('register',[UserController::class,'registeration']);
 
+Route::get('admin',[AdminController::class,'adminLayout']);
 Route::get('addadmin',[AdminController::class,'addadmin']);
+Route::post('addadmin',[AdminController::class,'newAdmin']);
+
 
 Route::get('admin/addproduct',[ProductController::class,'addProduct']);
-Route::post('admin/newproduct',[ProductController::class,'newProduct']);
+Route::post('admin/addproduct',[ProductController::class,'storeProduct']);
 
 Route::view('3','front.l3');
 Route::view('4','front.l4');
