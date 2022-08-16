@@ -19,9 +19,7 @@
         <!-- HEADER MOBILE-->
         <header class="header-mobile d-block d-lg-none">
             <div class="header-mobile__bar">
-                @if(session('status'))
-                <h2> {{session('status')}}</h2>
-                @endif
+               
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
                         <a class="logo" href="#">

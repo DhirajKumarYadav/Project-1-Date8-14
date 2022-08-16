@@ -1,10 +1,13 @@
 @extends('admin/layout')
 @section('container')
 <h1 class="mb10">Manage Product</h1>
-        <a href="{{url('admin/product')}}">
+        <a href="{{url('admin/addproduct')}}">
              <button type="button" class="btn btn-success">Back</button>
         </a>
 <div class="row m-t-30">
+@if(session('status'))
+                <h2> {{session('status')}}</h2>
+                @endif
    <div class="col-md-12">
         
         <form action="addproduct" method="post" enctype="multipart/form-data">

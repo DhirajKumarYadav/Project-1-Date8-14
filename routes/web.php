@@ -17,9 +17,9 @@ use App\Http\Controllers\ProductController;
 |
 */
 
-Route::get('/', function () {
-    return view('front.home');
-});
+// Route::get('/', function () {
+//     return view('front.home');
+// });
 Route::get('login',[UserController::class,'login']);
 Route::post('login',[UserController::class,'checkLogin']);
 Route::get('register',[UserController::class,'register']);
@@ -33,6 +33,8 @@ Route::post('addadmin',[AdminController::class,'newAdmin']);
 Route::get('admin/addproduct',[ProductController::class,'addProduct']);
 Route::post('admin/addproduct',[ProductController::class,'storeProduct']);
 Route::get('showproduct',[ProductController::class,'showProduct']);
+Route::get('/',[ProductController::class,'showProduct']);
+
 
 Route::view('3','front.l3');
 Route::view('4','front.l4');

@@ -31,13 +31,14 @@ if($req->hasfile('image'))
     $data->image=$filename;
 }
  $data->save();
-return redirect('admin')->with('status','successfully product added!!! ');
+return redirect('admin/addproduct')->with('status','successfully product added!!! ');
 }
 //========================================================================================
 public function showProduct()
 {
     $data= Product::all();
-    return view('front.product',['products'=>$data]);
+    return view('front.home',compact('data'));
 }
+//========================================================================================
 
 }
