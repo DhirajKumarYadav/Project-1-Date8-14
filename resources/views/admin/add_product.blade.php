@@ -7,7 +7,7 @@
 <div class="row m-t-30">
    <div class="col-md-12">
         
-        <form action="addproduct" method="post">
+        <form action="addproduct" method="post" enctype="multipart/form-data">
         @csrf
         <div class="row">
             <div class="col-lg-12">
@@ -25,22 +25,6 @@
                               <label for="price" class="control-label mb-1"> Price</label>
                               <input id="price" name="price" type="text" class="form-control" aria-required="true" aria-invalid="false" value="" required>
                         </div>
-                        <!-- <div class="form-group">
-                              <label for="size_id" class="control-label mb-1"> Size</label>
-                              <select id="size_id" name="size_id[]" class="form-control">
-                                 <option value="">Select</option>
-                              </select>
-                        </div> -->
-                        <!-- <div class="form-group">
-                              <label for="color_id" class="control-label mb-1"> Color</label>
-                              <select id="color_id" name="color_id[]" class="form-control">
-                                 <option value="">Select</option>
-                              </select>
-                        </div> -->
-                        <!-- <div class="form-group">
-                              <label for="qty" class="control-label mb-1"> Qty</label>
-                              <input id="qty" name="qty[]" type="text" class="form-control" aria-required="true" aria-invalid="false" value="" required>
-                        </div> -->
                         <div class="form-group">
                                 <label for="desc" class="control-label mb-1"> Category</label>
                                 <input id="category" name="category" type="text" class="form-control" aria-required="true" aria-invalid="false" required>

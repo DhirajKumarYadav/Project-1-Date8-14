@@ -22,11 +22,22 @@ $data->mrp=$req->input('mrp');
 $data->price=$req->input('price');
 $data->category=$req->input('category');
 $data->description=$req->input('description');
-$data->image=$req->input('image');
+if($req->hasfile('image'))
+{
+    $file= $req->file('image');
+    $extension=$file->getClientOriginalExtension();
+    $filename=time().'.'.$extension;
+    $file->move('uploads/images/',$filename);
+    $data->image=$filename;
+}
  $data->save();
-return redirect('admin');
+return redirect('admin')->with('status','successfully product added!!! ');
 }
 //========================================================================================
-
+public function showProduct()
+{
+    $data= Product::all();
+    return view('front.product',['products'=>$data]);
+}
 
 }

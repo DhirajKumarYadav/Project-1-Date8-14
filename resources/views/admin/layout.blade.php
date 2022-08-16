@@ -19,6 +19,9 @@
         <!-- HEADER MOBILE-->
         <header class="header-mobile d-block d-lg-none">
             <div class="header-mobile__bar">
+                @if(session('status'))
+                <h2> {{session('status')}}</h2>
+                @endif
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
                         <a class="logo" href="#">
@@ -132,7 +135,7 @@
                                         <div class="nav-item dropdown">
                         <a href="#" class="nav-link" data-toggle="dropdown">Admin<i class="fa fa-angle-down float-right mt-"></i></a>
                             <div class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0">
-                                <a href="addadmin" class="dropdown-item">Add Admin</a>
+                                <a href="/addadmin" class="dropdown-item">Add Admin</a>
                                 <a href="apple_laptop" class="dropdown-item">Logout</a>
 
                             </div>

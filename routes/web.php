@@ -32,6 +32,7 @@ Route::post('addadmin',[AdminController::class,'newAdmin']);
 
 Route::get('admin/addproduct',[ProductController::class,'addProduct']);
 Route::post('admin/addproduct',[ProductController::class,'storeProduct']);
+Route::get('showproduct',[ProductController::class,'showProduct']);
 
 Route::view('3','front.l3');
 Route::view('4','front.l4');
