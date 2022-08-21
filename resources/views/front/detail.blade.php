@@ -26,11 +26,13 @@
 <div class="col-sm-6">
     <a href="/" class="btn btn-primary">Go Back</a>
     <h2 >Name: {{$data['name']}}</h2>
-    <h4 class="btn btn-sm text-dark p-10">Price: {{$data['price']}}</h4><br>
-    <h4 class="btn btn-sm text-dark p-10">Category: {{$data['category']}}</h4><br>
-    <h4 class="btn btn-sm text-dark p-10">Description: {{$data['description']}}</h4>
+    <h4 class="nav-item nav-link">Price: {{$data['price']}}</h4><br>
+    <h4  class="nav-item nav-link">Category: {{$data['category']}}</h4><br>
+    <h4  class="nav-item nav-link">Description: {{$data['description']}}</h4>
 
    <br> <br>
+   <!-- <a href="details/{{$data['id']}}" class="btn btn-primary">View Detail</a> -->
+
    <button class="btn btn-primary">Add to Cart</button> 
    <br> <br>
    <button class="btn btn-success">Buy Now</button> 
