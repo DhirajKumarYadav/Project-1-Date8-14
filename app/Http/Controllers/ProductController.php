@@ -41,4 +41,13 @@ public function showProduct()
 }
 //========================================================================================
 
+public function productDetails($id)
+{
+    $data=Product::find($id);
+    // $data=Product::where('name',$name)->first();
+    // $user= Login::where(['email'=>$req->email])->first();
+    return view('front.detail',compact('data'));
+
+    // return view('front.')->with(compact('data'));
+}
 }
