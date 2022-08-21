@@ -36,6 +36,7 @@ Route::post('admin/addproduct',[ProductController::class,'storeProduct']);
 Route::get('showproduct',[ProductController::class,'showProduct']);
 Route::get('details/{id}',[ProductController::class,'productDetails']);
 Route::get('search',[ProductController::class,'searchProducts']);
+Route::post('add_to_cart',[ProductController::class,'addToCart']);
 
 Route::view('3','front.l3');
 Route::view('4','front.l4');

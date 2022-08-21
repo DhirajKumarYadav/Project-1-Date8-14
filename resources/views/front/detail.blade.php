@@ -20,23 +20,27 @@
 <div class="text-center mb-4">
             <h2 class="section-title px-5"><span class="px-2" >Products Detail</span></h2>
         </div><br>
-<div class="col-sm-6">
-<img class="img-flui" src="{{asset('uploads/images/'. $data['image'])}}"  width="300px" height="300px" alt="" alt="Image">
+<div class="col-sm-8">
+<img class="img-flui" style="align:center;" src="{{asset('uploads/images/'. $data['image'])}}"  width="300px" height="300px" alt="" alt="Image">
 </div class="left">
-<div class="col-sm-6">
+<div class="col-sm-7">
     <a href="/" class="btn btn-primary">Go Back</a>
     <h2 >Name: {{$data['name']}}</h2>
     <h4 class="nav-item nav-link">Price: {{$data['price']}}</h4><br>
     <h4  class="nav-item nav-link">Category: {{$data['category']}}</h4><br>
     <h4  class="nav-item nav-link">Description: {{$data['description']}}</h4>
 
-   <br> <br>
+    <br>
    <!-- <a href="details/{{$data['id']}}" class="btn btn-primary">View Detail</a> -->
+<form action="/add_to_cart" method="post">
+    @csrf
+    <input type="hidden" name="product_id" value="{{$data['id']}}">
+<button class="btn btn-primary">Add to Cart</button> 
 
-   <button class="btn btn-primary">Add to Cart</button> 
+</form>
    <br> <br>
    <button class="btn btn-success">Buy Now</button> 
-   <br> <br>
+   <br>
    </div>
 
 </div>
@@ -47,6 +51,8 @@
 <style>
 .col-sm-6{
     margin: 20px;
+    float:left;
+
 }
 .left{
     float:left;
