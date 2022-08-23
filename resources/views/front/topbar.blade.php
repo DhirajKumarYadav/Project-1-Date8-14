@@ -1,3 +1,20 @@
+<!-- ==================================================================================================================================================================================== -->
+<!-- this is for the cart item counting in the cart. that how many items are present in the cart that
+will be shown in the cart icon list -->
+<?php
+use App\Http\Controllers\ProductController;
+//this method is called scope resolution method. this will show the error like Non static method 
+//can not be called statically
+$total=0;
+//if user will we there then only the cart list will show the count of the items
+if(Session::has('user'))
+{
+    $total=ProductController::cartItem();
+}
+
+?>
+<!-- ==================================================================================================================================================================================== -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -78,14 +95,17 @@
                 </form>
             </div>
             <div class="col-lg-3 col-6 text-right">
-                <a href="" class="btn border">
+                <!-- <a href="" class="btn border">
                     <i class="fas fa-heart text-primary"></i>
                     <span class="badge">0</span>
-                </a>
+                </a> -->
+<!-- ==================================================================================================================================================================================== -->
                 <a href="" class="btn border">
                     <i class="fas fa-shopping-cart text-primary"></i>
-                    <span class="badge">0</span>
+                    <span class="badge">Cart({{$total}})</span>
                 </a>
+<!-- ==================================================================================================================================================================================== -->
+
             </div>
         </div>
     </div>

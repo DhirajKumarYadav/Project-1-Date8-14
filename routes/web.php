@@ -17,9 +17,11 @@ use App\Http\Controllers\ProductController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('front.home');
-// });
+Route::get('/logout', function () {
+//this session will erase the session data using the forget function
+    Session::forget('user');
+    return redirect('login');
+});
 Route::get('login',[UserController::class,'login']);
 Route::post('login',[UserController::class,'checkLogin']);
 Route::get('register',[UserController::class,'register']);

@@ -66,7 +66,12 @@
 </a>
                     <div class="card-footer d-flex justify-content-between bg-light border">
                         <a href="details/{{$item['id']}}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                        <form action="/add_to_cart" method="post">
+                           @csrf
+                                 <input type="hidden" name="product_id" value="{{$item->id}}">
+                                <!-- <button class="btn btn-primary">Add to Cart</button>  -->
+                                <button class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</button>
+                        </form>
                     </div>
                 </div>
             </div>

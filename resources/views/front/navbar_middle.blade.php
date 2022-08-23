@@ -38,12 +38,24 @@
                                     <a href="contact" class="nav-item nav-link">Contact</a></div> <div class="navbar-nav ml-auto py-0">
                                     <!-- <a href="admin" class="nav-item nav-link">Login</a> -->
                                     <!-- <a href="logout" class="nav-item nav-link">Logout</a> -->
+
+<!-- ==================================================================================================================================================================================== -->
                                     <div class="nav-item dropdown">
-                            <a href="#" class="nav-link" data-toggle="dropdown">User<i class="fa fa-angle-down float-right mt-1"></i></a>
+                                        @if(Session::has('user'))
+                            <a href="#" class="nav-link" data-toggle="dropdown">{{Session::get('user')['name']}}<i class="fa fa-angle-down float-right mt-1"></i></a>
+                            <div class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0">
+                                <!-- <a href="/" class="dropdown-item">Login</a> -->
+                                <!-- <a href="register" class="dropdown-item">Register</a> -->
+                                <a href="/logout" class="dropdown-item">Logout</a>
+                                @else
+                                <a href="#" class="nav-link" data-toggle="dropdown">User<i class="fa fa-angle-down float-right mt-1"></i></a>
                             <div class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0">
                                 <!-- <a href="/" class="dropdown-item">Login</a> -->
                                 <a href="register" class="dropdown-item">Register</a>
                                 <a href="login" class="dropdown-item">Login</a>
+                            @endif
+<!-- ==================================================================================================================================================================================== -->
+
                         </div>
                     </div>
                 </nav>

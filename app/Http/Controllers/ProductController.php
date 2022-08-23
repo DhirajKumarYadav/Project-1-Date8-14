@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\Cart;
 use Illuminate\Http\Request;
+use Session;
 
 class ProductController extends Controller
 {
@@ -53,7 +54,6 @@ public function searchProducts(Request $req)
      return view('front.searched',['data'=>$data]);
 }
 //========================================================================================
-
 public function addToCart(Request $req)
 {
     if($req->session()->has('user'))
@@ -67,4 +67,13 @@ public function addToCart(Request $req)
         return redirect('/login');
     }
 }
+//========================================================================================
+//we are using the static function so we can remove the error like  Non static function can not be used statically
+ static function cartItem()
+ {
+    $userId=Session::get('user')['id'];
+      return Cart::where('user_id',$userId)->count();
+ }
+//========================================================================================
+
 }
