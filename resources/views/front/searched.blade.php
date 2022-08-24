@@ -15,33 +15,45 @@
 <!-- =================================================================================================================== -->
 <!-- showing the products from the database into the home page, it will show the products which admin add in the home page     -->
 <!-- Products Start -->
-<div class="">
+<div class="custom-product">
+        <div class="trending-wrapper" style="padding: 40px;">
         <div class="text-center mb-4">
-            <h2 class=""><span class="px-2">Search Products</span></h2>
-        </div><br>
-        <div class="">
+            <!-- <h2 class=""><span class="px-2">Search Products</span></h2> -->
+            <h1 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">Search Products</span></h1>
 
-        @foreach($data as $item)
-            <div class="" style="text-align: center;">
-                <div class="card product-item border-0 mb-4">
-                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                <a href="details/{{$item['id']}}" class="cat-img position-relative overflow-hidden mb-3"> 
-                       <img class="img-flui" src="{{asset('uploads/images/'. $item->image)}}" width="200px" height="200px" alt="">
-                       </a>
-                    </div>
-        <a href="details/{{$item['id']}}">      
-                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 class="text-primary font-weight-bold border px-3 mr-1">{{$item->name}}</h6>
-                        <h6>Price: {{$item->price}}</h6>
-                        <h6 class="text-truncate mb-3">{{$item->description}}</h6>
+        </div>
+            <!-- <h2>Your Cart Products</h2> -->
+            <br>
+            <br>
+             @foreach($data as $item)
+            <div class="row searched-item list-divider" style="padding: 40px;">
+                <div class="col-sm-3">
+                   <a href="details/{{$item->id}}"> 
+                       <img src="{{asset('uploads/images/'. $item->image)}}" width="200x" height="200px"  alt="">
+                    </a>
+                </div>
 
-                        <div class="d-flex justify-content-center">
-                        </div>
+                <div class="col-sm-4">
+                    <div class=""><br>
+                        <h2>{{$item->name}}</h2>
+                        <h6>Rs: {{$item->price}}</h6><del>{{$item->mrp}}</del></h6>
+                        <h6>{{$item->description}}</h6>
                     </div>
-</a>
+                </div>
+                
+                <div class="col-sm-2"><br><br><br>
+                <form action="/add_to_cart" method="post">
+                           @csrf
+                                 <input type="hidden" name="product_id" value="{{$item->id}}">
+                                <!-- <button class="btn btn-primary">Add to Cart</button>  -->
+                                <button class="btn btn-warning">Add To Cart</button>
+                        </form>
+
+                   <!-- <button >Add to Cart</button> -->
                 </div>
             </div>
-            </a>
             @endforeach
-    <!-- Products End -->
+
+        </div>
+</div>
 @endsection

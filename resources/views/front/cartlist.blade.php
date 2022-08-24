@@ -1,7 +1,7 @@
 @extends('front.layout')
 @section('content')
 <!-- Page Header Start -->
-<div class="container-fluid bg-secondary mb-5">
+<!-- <div class="container-fluid bg-secondary mb-5">
         <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
             <h1 class="font-weight-semi-bold text-uppercase mb-3">Cart Products</h1>
             <div class="d-inline-flex">
@@ -10,38 +10,52 @@
                 <p class="m-0">Cart Products</p>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Page Header End -->
 <!-- =================================================================================================================== -->
 <!-- showing the products from the database into the home page, it will show the products which admin add in the home page     -->
 <!-- Products Start -->
-<div class="">
+<div class="custom-product">
+        <div class="trending-wrapper" style="padding: 40px;">
+      
         <div class="text-center mb-4">
-            <h2 class=""><span class="px-2">Your Cart Products</span></h2>
-        </div><br>
-        <div class="">
+            <!-- <h2 class=""><span class="px-2">Your Cart Products</span></h2> -->
+            <h1 class="m-0 display-5 font-weight-semi-bold">
+            <span class="text-primary font-weight-bold border px-3 mr-1">Your Cart Products</span></h1>
+            <br>
+            <a href="/ordernow" class="btn btn-success">Buy Now</a>
+            <!-- <button class="btn btn-success">Buy Now</button>  -->
+        </div>
+            <br>
+             @foreach($products as $item)
 
-        @foreach($products as $item)
-            <div class="col-sm-10" style="text-align: center;">
-                <div class="card product-item border-0 mb-4">
-                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                <a href="details/{{$item->id}}" class="cat-img position-relative overflow-hidden mb-3"> 
-                       <img class="img-flui" src="{{asset('uploads/images/'. $item->image)}}" width="200px" height="200px" alt="">
-                       </a>
-                    </div>
-        <a href="details/{{$item->id}}">      
-                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 class="text-primary font-weight-bold border px-3 mr-1">{{$item->name}}</h6>
-                        <h6>Price: {{$item->price}}</h6>
-                        <h6 class="text-truncate mb-3">{{$item->description}}</h6>
+            <div class="row searched-item list-divider" style="padding: 40px;">
+                <div class="col-sm-3">
+                   <a href="details/{{$item->id}}"> 
+                       <img src="{{asset('uploads/images/'. $item->image)}}" width="200x" height="200px"  alt="">
+                    </a>
+                </div>
 
-                        <div class="d-flex justify-content-center">
-                        </div>
+                <div class="col-sm-4">
+                    <div class=""><br>
+                        <h2>{{$item->name}}</h2>
+                        <h6>Rs: {{$item->price}}</h6><del>{{$item->mrp}}</del></h6>
+                        <h6>{{$item->description}}</h6>
                     </div>
-</a>
+                </div>
+                
+                <div class="col-sm-2">
+                    <br><br><br>
+                   <a href="/removecart/{{$item->cart_id}}"class="btn btn-warning">Remove from Cart</a>
                 </div>
             </div>
-            </a>
             @endforeach
-    <!-- Products End -->
+            <br>
+            <br>
+        <div class="text-center mb-4">
+            <a href="/ordernow" class="btn btn-success">Buy Now</a>
+
+        </div>
+        </div>
+</div>
 @endsection

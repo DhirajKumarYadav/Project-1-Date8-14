@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,50 +16,56 @@
 
 <body>
     
-<div class="container">
-<div class="row">
-<div class="text-center mb-4">
-            <h2 class="section-title px-5"><span class="px-2" >Products Detail</span></h2>
-        </div><br>
-<div class="col-sm-8">
-<img class="img-flui" style="align:center;" src="{{asset('uploads/images/'. $data['image'])}}"  width="300px" height="300px" alt="" alt="Image">
-</div class="left">
-<div class="col-sm-7">
-    <a href="/" class="btn btn-primary">Go Back</a>
-    <h2 >Name: {{$data['name']}}</h2>
-    <h4 class="nav-item nav-link">Price: {{$data['price']}}</h4><br>
-    <h4  class="nav-item nav-link">Category: {{$data['category']}}</h4><br>
-    <h4  class="nav-item nav-link">Description: {{$data['description']}}</h4>
+<div class="custom-product">
+        <div class="trending-wrapper" style="padding: 40px;">
+        <div class="text-center mb-4">
+            <!-- <h2 class=""><span class="px-2">Product Details</span></h2> --><br>
 
-    <br>
-   <!-- <a href="details/{{$data['id']}}" class="btn btn-primary">View Detail</a> -->
-<form action="/add_to_cart" method="post">
-    @csrf
-    <input type="hidden" name="product_id" value="{{$data['id']}}">
-<button class="btn btn-primary">Add to Cart</button> 
+            <h1 class="m-0 display-5 font-weight-semi-bold"><b>Product Details</b></h1>
 
-</form>
-   <br> <br>
-   <button class="btn btn-success">Buy Now</button> 
-   <br>
-   </div>
+        </div>
+            <!-- <h2>Your Cart Products</h2> -->
+            <br>
+            <br>
 
+            <div class="row searched-item list-divider" style="padding: 40px;">
+                <div class="col-sm-4">
+                       <img src="{{asset('uploads/images/'. $data['image'])}}" width="350px" height="350px"  alt="">
+                </div>
+
+                <div class="col-sm-4">
+                    <div class=""><br>
+                        <h2>Name: {{$data['name']}}</h2><br>
+                        <h5>Price: {{$data['price']}}</h5>Mrp: <del>{{$data['mrp']}}</del></h6><br><br>
+                        <h5>Description: {{$data['description']}}</h5>
+                    </div><br><br><br>
+                    <a href="/" class="btn btn-primary"  style='margin-right:80px'>Go Back</a>
+                    <a href="/cartlist" class="btn btn-primary">Cart List</a>
+                    
+                </div>
+                
+                <div class="col-sm-4" style="padding-left: 90px;"><br><br><br>
+
+                <form action="/add_to_cart" method="post">
+                           @csrf
+                                 <input type="hidden" name="product_id" value="{{$data['id']}}">
+                                <!-- <button class="btn btn-primary">Add to Cart</button>  -->
+                                <button class="btn btn-warning">Add To Cart</button>
+                        </form>
+
+                        </form>
+                           <br> <br><br>    
+                             <button class="btn btn-success">Buy Now</button> 
+                                   <br>
+                          </form>
+
+
+                   <!-- <button >Add to Cart</button> -->
+                </div>
+            </div>
+
+
+        </div>
 </div>
-</div>
-</div>
-
 </body>
-<style>
-.col-sm-6{
-    margin: 20px;
-    float:left;
-
-}
-.left{
-    float:left;
-    width:20%;
-}
-
-
-</style>
 </html>

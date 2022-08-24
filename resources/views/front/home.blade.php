@@ -79,4 +79,25 @@
             @endforeach
     <!-- Products End -->
 <!-- =================================================================================================================== -->
+<!-- Subscribe Start -->
+<div class="container-fluid bg-secondary my-5">
+        <div class="row justify-content-md-center py-5 px-xl-5">
+            <div class="col-md-6 col-12 py-5">
+                <div class="text-center mb-2 pb-2">
+                    <h2 class="section-title px-5 mb-3"><span class="bg-secondary px-2">Stay Updated</span></h2>
+                    <p>Keep Yourself Updated for the latest products and the offers that come on the every occasions, Stay connected with the Electronic Store.</p>
+                </div>
+                <form action="subscriber" method="post">
+                    @csrf
+                    <div class="input-group">
+                    <input class="form-control border-white p-4" type="email" name="email" placeholder="Email Goes Here">
+                       <div class="input-group-append">
+                            <button class="btn btn-primary px-4">Subscribe</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+<!-- Subscribe End -->
 {{View::make('front.footer')}}
