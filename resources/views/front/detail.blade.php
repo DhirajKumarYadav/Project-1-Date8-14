@@ -55,7 +55,7 @@
 
                         </form>
                            <br> <br><br>    
-                             <button class="btn btn-success">Buy Now</button> 
+                             <a href="/ordernow" class="btn btn-success">Buy Now</a> 
                                    <br>
                           </form>
 

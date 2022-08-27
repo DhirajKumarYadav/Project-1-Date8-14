@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\Cart;
+use App\Models\Order;
 use Illuminate\Http\Request;
 use Session;
 use Illuminate\Support\Facades\DB;
@@ -104,7 +105,34 @@ return view('front.ordernow',['total'=>$total]);
 }
 //========================================================================================
 
+public function PlaceOrder(Request $req)
+{
+    $req->input();
+    $userId=Session::get('user')['id'];
+    $allCart=Cart::where('user_id',$userId)->get();
+// we need to save the data in the product table and remove the data from the cart table
+    foreach($allCart as $Cart)
+{
+    $order =new Order;
+    $order->product_id=$Cart['product_id'];
+    $order->user_id=$Cart['user_id'];
+    $order->status="pending";
+    $order->payment_status="pending";
+    $order->payment_method=$req->payment;
+    $order->fullname=$req->fullname;
+    $order->mobileno=$req->mobile;
+    $order->country=$req->country;
+    $order->city=$req->city;
+    $order->state=$req->state;
+    $order->zipcode=$req->zipcode;
+    $order->save();
 
+    Cart::where('user_id',$userId)->delete();
+}
+
+ $req->input();
+return redirect('/');
+}
 
 
 }
