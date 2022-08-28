@@ -44,6 +44,7 @@ Route::get('/removecart/{id}',[ProductController::class,'removeCart']);
 Route::get('ordernow',[ProductController::class,'orderNow']);
 Route::post('buynow',[ProductController::class,'buyNow']);
 Route::post('/place_order',[ProductController::class,'PlaceOrder']);
+Route::post('/place_order_now',[ProductController::class,'PlaceOrderNow']);
 
 
 Route::view('3','front.l3');
