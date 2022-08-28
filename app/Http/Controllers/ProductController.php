@@ -104,6 +104,21 @@ public function orderNow()
 return view('front.ordernow',['total'=>$total]);
 }
 //========================================================================================
+//========================================================================================
+public function buyNow(Request $req)
+{
+$userId= Session::get('user')['id'];
+// return $req->input();
+//  return $data=Product::find($req->product_id)->get();
+$total=$req->price;
+return view('front.ordernow',['total'=>$total]);
+
+}
+
+
+
+//========================================================================================
+//========================================================================================
 
 public function PlaceOrder(Request $req)
 {
@@ -133,6 +148,7 @@ public function PlaceOrder(Request $req)
  $req->input();
 return redirect('/');
 }
+//========================================================================================
 
 
 }

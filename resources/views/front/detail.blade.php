@@ -53,10 +53,16 @@
                                 <button class="btn btn-warning">Add To Cart</button>
                         </form>
 
-                        </form>
-                           <br> <br><br>    
-                             <a href="/ordernow" class="btn btn-success">Buy Now</a> 
-                                   <br>
+                        
+                           <!-- <br> <br><br>    
+                             <a href="/buynow/{{$data['id']}}" class="btn btn-success">Buy Now</a> 
+                                   <br> -->
+                <form action="/buynow" method="post">
+                           @csrf
+                                 <input type="hidden" name="price" value="{{$data['price']}}">
+                                 <br> <br><br>
+                                 <button class="btn btn-success">Buy Now</button>
+                                 <br>
                           </form>
 
 
