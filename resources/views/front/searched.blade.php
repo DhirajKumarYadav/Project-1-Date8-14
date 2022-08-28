@@ -1,7 +1,7 @@
 @extends('front.layout')
 @section('content')
 <!-- Page Header Start -->
-<div class="container-fluid bg-secondary mb-5">
+<!-- <div class="container-fluid bg-secondary mb-5">
         <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
             <h1 class="font-weight-semi-bold text-uppercase mb-3">Search Products</h1>
             <div class="d-inline-flex">
@@ -10,7 +10,7 @@
                 <p class="m-0">Search Products</p>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Page Header End -->
 <!-- =================================================================================================================== -->
 <!-- showing the products from the database into the home page, it will show the products which admin add in the home page     -->
@@ -41,13 +41,25 @@
                     </div>
                 </div>
                 
-                <div class="col-sm-2"><br><br><br>
+                <div class="col-sm-5"><br><br><br>
                 <form action="/add_to_cart" method="post">
                            @csrf
                                  <input type="hidden" name="product_id" value="{{$item->id}}">
                                 <!-- <button class="btn btn-primary">Add to Cart</button>  -->
-                                <button class="btn btn-warning">Add To Cart</button>
-                        </form>
+                                <span> <button class="btn btn-warning" style='margin-right:80px'>Add To Cart</button>
+
+                                </form>
+
+                    <!-- <a href="/cartlist" class="btn btn-success">Buy Now</a> -->
+                    <!-- <form action="/buynow" method="post">
+                           @csrf
+                                 <input type="hidden" name="price" value="{{$item->price}}">
+                                 <br> <br><br>
+                                 <button class="btn btn-success">Buy Now</button>
+                                 <br>
+                          </form> -->
+
+
 
                    <!-- <button >Add to Cart</button> -->
                 </div>

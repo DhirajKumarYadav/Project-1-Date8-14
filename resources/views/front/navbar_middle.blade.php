@@ -30,7 +30,7 @@
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
                         <a href="/" class="nav-item nav-link">Home</a>
-                                    <a href="shop" class="nav-item nav-link active">Shop</a>
+                                    <a href="/MyOrders" class="nav-item nav-link">Orders</a>
                                     <a href="shopdetail" class="nav-item nav-link">Shop Detail</a><div class="nav-item dropdown">
                                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a> <div class="dropdown-menu rounded-0 m-0">
                                     <a href="/cartlist" class="dropdown-item">Shopping Cart</a>

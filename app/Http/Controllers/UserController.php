@@ -42,6 +42,17 @@ class UserController extends Controller
         $data->email=$req->email;
         $data->password=Hash::make($req->password);
         $data->save();
+
+        $user= Login::where(['email'=>$req->email])->first();
+        if(!$user || !Hash::check($req->password,$user->password))
+        {
+            return "UserName or Password incorrect";
+        }
+        else
+        {
+            $req->session()->put('user',$user);
+          return redirect('/');
+        }
         return redirect('/');
     }
 //==================================================================================================
